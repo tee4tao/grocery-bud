@@ -1,13 +1,139 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f1f5f8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+section {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  width: 90vw;
+  max-width: 36rem;
+  margin: 8rem auto;
+}
+.heading {
+  text-transform: capitalize;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+form {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+input {
+  /* width: 26rem; */
+  width: 80%;
+  height: 1.8rem;
+  border: transparent;
+  background-color: #f1f5f8;
+  padding: 10px;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+  font-size: 1rem;
+  color: #617d98;
+}
+.btn {
+  height: 1.8rem;
+  background-color: #a5d5f8;
+  border: transparent;
+  width: 5rem;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  transition: all linear 0.5s;
+}
+.btn:hover {
+  color: white;
+  background-color: #49a6e9;
+  cursor: pointer;
+  transition: all linear 0.5s;
+}
+.alert-container {
+  width: 90%;
+  margin-top: 2rem;
+}
+.alert {
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  padding: 2px;
+  word-spacing: 5px;
+}
+.success {
+  color: #155724;
+  background-color: #d4edda;
+}
+.danger {
+  color: #721c24;
+  background-color: #f8d7d8;
+}
+.grocery-lists {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  padding: 8px;
+  transition: all linear 0.5s;
+}
+.grocery-lists:hover {
+  background-color: #f1f5f8;
+  transition: all linear 0.5s;
+}
+.item-list {
+  color: #102a42;
+}
+.edit-icon {
+  color: #6be675;
+  display: inline-block;
+  margin-right: 0.25rem;
+  font-size: 0.8rem;
+  transition: color linear 0.25s;
+}
+.edit-icon:hover {
+  color: #25bb32;
+  transition: color linear 0.25s;
+  cursor: pointer;
+}
+.delete-icon {
+  color: #e66b6b;
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-size: 0.8rem;
+  transition: color linear 0.25s;
+}
+.delete-icon:hover {
+  color: #bb2525;
+  transition: color linear 0.25s;
+  cursor: pointer;
+}
+.clear-items {
+  border: transparent;
+  background-color: transparent;
+  color: #e66b6b;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all linear 0.5s;
+}
+.clear-items:hover {
+  color: #bb2525;
+  cursor: pointer;
+  transition: all linear 0.5s;
+}
+
+@media screen and (min-width: 800px) {
+  .heading {
+    font-size: 2rem;
+  }
 }
