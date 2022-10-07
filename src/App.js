@@ -6,24 +6,20 @@ function App() {
   let [text, setText] = useState("");
   let [alert, setAlert] = useState("");
   let [isShow, setIsShow] = useState(false);
-  let [edit, setEdit] = useState(false);
+  let [edit, setEdit] = useState(false); //this is a Bool value that help switch between the edit-btn and submit-btn, if true, it help change the submit-btn to edit-btn and vice-versa
   let [index, setIndex] = useState("");
   let [list, setList] = useState([]);
   let refContainer = useRef(null);
   let handleSubmit = (e) => {
     e.preventDefault();
     let value = refContainer.current.value;
-    if (value && edit) {
-      setAlert("value changed");
-      setDangerAlert(false);
-    }
     if (value) {
       let juju = { value, id: new Date().getTime().toString() };
-      setList([...list, juju]); // this compile all the values of list into an array
+      setList([...list, juju]); // this combine all the values of list(our input) into an array so I can later iterate over it
       setAlert("item added to the list");
       setDangerAlert(false);
       setIsShow(true);
-      setText(""); //to remove the value from the input immediately we click on submit
+      setText(""); //to remove our text from the input immediately we click on submit
     }
     if (!value) {
       setAlert("please enter value");
@@ -34,10 +30,9 @@ function App() {
   let editBtn = () => {
     setEdit(false);
     if (text) {
-      list[index] = { text, id: new Date().getTime().toString() };
-      list.splice(index, 1);
+      list[index] = { text, id: new Date().getTime().toString() }; //this replace the item of the list that we wanted to edit with the newly editted text after clicking on the edit-submit btn.
+      list.splice(index, 1); // this help remove the item we ediited from the array of the list items.
     }
-    setAlert("value changed");
   };
   // for the remove button
   let removeItem = (id) => {
@@ -52,11 +47,11 @@ function App() {
   let editItem = (id) => {
     let newItem = list.filter((item) => {
       return item.id == id;
-    });
-    let indexNum = list.indexOf(newItem[0]);
+    }); // this will return an array which contains the value and id of the selected item
+    let indexNum = list.indexOf(newItem[0]); // to get the index of the selected item in the list array
     setIndex(indexNum);
-    let test = newItem[0].value;
-    setText(test);
+    let newValue = newItem[0].value;
+    setText(newValue);
     setEdit(true);
   };
   // for the clear button

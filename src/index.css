@@ -13,6 +13,7 @@ section {
   width: 90vw;
   max-width: 36rem;
   margin: 8rem auto;
+  transition: all linear 0.3s;
 }
 .heading {
   text-transform: capitalize;
